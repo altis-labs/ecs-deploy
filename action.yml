@@ -101,6 +101,11 @@ inputs:
     description: '--skip-deployments-check'
   skip_deployments_check:
     description: 'Skip deployments check for services that take too long to drain old tasks'
+  copy_task_definitions_cmd:
+    description: '--copy-task-definition-tags'
+  copy_task_definitions:
+    description: 'Copy the existing task definition tags to the new task definition revision'
+    required: false
   verbose:
     description: 'Verbose output'
     required: false
@@ -132,5 +137,6 @@ runs:
     '${{ inputs.tag_env_var_cmd }}', '${{ inputs.tag_env_var }}',
     '${{ inputs.tag_only_cmd }}', '${{ inputs.tag_only }}',
     '${{ inputs.use_latest_task_def_cmd }}', '${{ inputs.use_latest_task_def }}',
-    '${{ inputs.max_definitions_cmd }}', '${{ inputs.max_definitions }}'
+    '${{ inputs.max_definitions_cmd }}', '${{ inputs.max_definitions }}',
+    '${{ inputs.copy_task_definitions_cmd }}', '${{ inputs.copy_task_definitions }}',
   ]
